@@ -1,14 +1,15 @@
 // complete the given function
 
-function palindrome(str){
-	str.trim();
-	str = str.join(' ');
-	let len = str.length-1;
-	for(let i=0 ; i<len/2 ; i++){
-		if(str[i] !== str[len-i]){
-			return { message: false } ;
-		}
+function palindrome(str) {
+  str = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+	let len = str.length;
+	for (let i = 0; i < len / 2; i++) {
+	    if (str[i] !== str[len - 1 - i]) {
+	      return false;
+	    }
 	}
 	return true;
 }
-module.exports = palindrome
+
+module.exports = palindrome;
+
